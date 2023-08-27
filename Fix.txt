@@ -1,0 +1,1 @@
+TODO: use post install script to remove invalid character, u+00a0 from node_modules\readdir-glob\index.js

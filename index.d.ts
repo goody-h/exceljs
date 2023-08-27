@@ -1814,6 +1814,10 @@ export interface TableColumnProperties {
 	  * Optional formula for custom functions
 	  */
 	totalsRowFormula?: string;
+	/**
+	 * Optional formula to apply to the entire column
+	 */
+	calculatedColumnFormula?: string
 }
 
 
@@ -1848,11 +1852,29 @@ export interface TableProperties {
 	/**
 	 * Column definitions
 	 */
-	columns: TableColumnProperties[]
+	columns: TableColumnProperties[];
 	/**
 	 * Rows of data
 	 */
-	rows: any[][]
+	rows: any[][];
+	/**
+    * Table properties
+    */
+	table: {
+		name: string,
+		displayName: string,
+		tableRef: string,
+		totalsRow: boolean,
+		headerRow: boolean,
+		autoFilterRef: string,
+		autoFilter: any;
+		style: {
+			theme: string,
+		},
+		columns: {
+			filterButton: boolean
+		}[]
+	}
 }
 
 export type TableColumn = Required<TableColumnProperties>

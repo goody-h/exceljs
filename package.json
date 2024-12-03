@@ -59,7 +59,8 @@
     "build": "grunt build",
     "install-build": "npm install && grunt build",
     "preversion": "npm run clean && npm run build && npm run test:version",
-    "postversion": "git push --no-verify && git push --tags --no-verify"
+    "postversion": "git push --no-verify && git push --tags --no-verify",
+    "postinstall": "sed -i '' 's/\\xC2\\xA0/ /g' node_modules/readdir-glob/index.js"
   },
   "husky": {
     "hooks": {
